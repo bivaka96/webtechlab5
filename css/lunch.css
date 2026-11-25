@@ -1,0 +1,284 @@
+.menu-section {
+    margin-bottom: 40px;
+}
+
+.dishes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.dish {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    cursor: pointer;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    background-color: white;
+}
+
+.dish:hover {
+    border: 2px solid tomato;
+}
+
+.dish__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 35px;
+    margin-bottom: 20px;
+}
+
+.dish__price {
+    font-size: 24px;
+}
+
+.dish__name {
+    flex-grow: 1;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.dish__count {
+    color: gray;
+    font-size: 18px;
+}
+
+.dish__button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f1eee9;
+    font-family: "Onest", Arial, sans-serif;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+}
+
+.dish:hover .dish__button {
+    background-color: tomato;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .dishes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-section .section-title {
+        text-align: center;
+    }
+
+    .dishes {
+        grid-template-columns: 1fr;
+    }
+}
+
+.order {
+    padding: 20px 50px 50px;
+}
+
+.order__title {
+    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.order-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.order-form__subtitle {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.field__label {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.field__control {
+    width: 100%;
+    max-width: 370px;
+    height: 50px;
+    padding: 0 12px;
+    border: 1px solid #555;
+    border-radius: 2px;
+    font-family: "Onest", Arial, sans-serif;
+    font-size: 18px;
+    background-color: white;
+}
+
+.field__control_textarea {
+    height: 145px;
+    padding: 12px;
+    resize: vertical;
+}
+
+.field__hint {
+    margin-top: 6px;
+    font-size: 17px;
+    font-style: italic;
+}
+
+.field_checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    font-size: 20px;
+}
+
+.field_checkbox input {
+    width: 18px;
+    height: 18px;
+}
+
+.field_radio {
+    border: none;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.radio input {
+    width: 18px;
+    height: 18px;
+}
+
+.required {
+    color: tomato;
+}
+
+.order-form__buttons {
+    display: flex;
+    gap: 8px;
+    max-width: 370px;
+}
+
+.order-form__button {
+    flex: 1;
+    height: 45px;
+    border: 2px solid #000;
+    background-color: white;
+    font-family: "Onest", Arial, sans-serif;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+}
+
+.order-form__button:hover {
+    background-color: tomato;
+    border-color: tomato;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .order {
+        padding: 20px 16px 40px;
+    }
+
+    .order-form {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .field__control,
+    .order-form__buttons {
+        max-width: none;
+    }
+}
+
+.dish_selected,
+.dish_selected:hover {
+    border: 2px solid tomato;
+}
+
+.order-summary {
+    margin-bottom: 30px;
+}
+
+.order-summary__empty {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.order-summary__item,
+.order-summary__total {
+    margin-bottom: 20px;
+}
+
+.order-summary__label {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.order-summary__value {
+    font-size: 20px;
+}
+
+.order-summary__value_total {
+    font-size: 26px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.filters__button {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: white;
+    font-family: "Onest", Arial, sans-serif;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+}
+
+.filters__button:hover {
+    border-color: tomato;
+    color: tomato;
+}
+
+.filters__button.active {
+    border-color: tomato;
+    background-color: tomato;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .filters {
+        justify-content: center;
+    }
+}
